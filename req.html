@@ -53,16 +53,13 @@ https://developers.arcgis.com/documentation/mapping-apis-and-services/get-starte
 
     <script>
 
-      const apiKey = "AAPKf561587b04244970a5ba7cd54417509ci5skCS3lRkB4XQXBk9Fks8JNCV20tLPkrs3cHtZMZZMp047FT6_2Jf_LaZS9XWAV";
-      const basemapEnum = "ArcGIS:Streets";
+   var map = L.map('map').setView([ 27,  -4], 5);
+ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+           attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+           maxZoom: 11,
+           minZoom: 4
+         }).addTo(map);
 
-      const map = L.map("map", {
-        minZoom: 2
-      }).setView([27, -4], 5);
-
-      L.esri.Vector.vectorBasemapLayer(basemapEnum, {
-        apiKey: apiKey
-      }).addTo(map);
 
 
 
